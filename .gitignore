@@ -1,5 +1,6 @@
-#OS Files
+#OS Files and Folders
 .DS_Store
 
-#Editor Files
+#Editor Files and Folders
 .idea/
+.firebase/

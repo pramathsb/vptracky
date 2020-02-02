@@ -1,0 +1,19 @@
+{
+  "name": "vehicle-performance-tracker",
+  "version": "1.0.0",
+  "description": "vehicle-performance-tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pramathsb/vehicle-performance-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pramathsb/vehicle-performance-tracker/issues"
+  },
+  "homepage": "https://github.com/pramathsb/vehicle-performance-tracker#readme"
+}

@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Vpt from './layouts/main'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    car: {
+      carData :{
+        brand: 'Hyundai',
+        model: 'i10 Grand Nios',
+        type: 'Car',
+        fuelType: 'Diesel',
+        fuel: '37 litres',
+        ratedMileage: '25 Km/l',
+        actualMileage: '20 Km/l',
+        topSpeed: '110 km/h',
+        age: '',
+        dateOfPurchase: '9/2/2020',
+      },
+      odoData: [
+        {
+          id: 1,
+          date: '9/2/2020',
+          odo: 23,
+          fuelPrice: 75,
+          quantiyRs: null,
+          quantiyLtrs: 20,
+          currentCapactiy: 20,
+        },
+        {
+          id: 2,
+          date: '9/2/2020',
+          odo: 23,
+          fuelPrice: 75,
+          quantiyRs: null,
+          quantiyLtrs: 20,
+          currentCapactiy: 20,
+        }
+      ]
+    }
+  };
+
+  render() {
+    return (
+      <Vpt state={this.state}/>
+    )
+  };
 }
 
 export default App;

@@ -21,19 +21,19 @@ class App extends React.Component {
         {
           id: 1,
           date: '9/2/2020',
-          odo: 23,
-          fuelPrice: 75,
-          quantiyRs: null,
-          quantiyLtrs: 20,
+          odo: 20,
+          fuelPrice: 68.30,
+          quantiyRs: 1000,
+          quantiyLtrs: 14.64,
           currentCapactiy: 20,
         },
         {
           id: 2,
-          date: '9/2/2020',
-          odo: 23,
-          fuelPrice: 75,
-          quantiyRs: null,
-          quantiyLtrs: 20,
+          date: '19/2/2020',
+          odo: 300,
+          fuelPrice: 68.30,
+          quantiyRs: 1000,
+          quantiyLtrs: 14.64,
           currentCapactiy: 20,
         }
       ]

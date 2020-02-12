@@ -2,7 +2,6 @@ import React from 'react';
 
 function odoDetails (props) {
 
-    console.log(props)
     let i=0;
 
     return (
@@ -24,12 +23,20 @@ function odoDetails (props) {
                     props.data.map((odoList)=> {
                         return <tr key={i++}>
                             {Object.keys(odoList).map((key,index)=>{
+
+                                if (key==='id')
+                                    return false
+                                else
                                 return (
                                     <td key={index}>
-                                        {odoList[key]}
+                                        {(
+                                            odoList[key]
+                                        )}
                                     </td>
                                 )
                             })}
+                            <td>{((props.data[i-2]) ? props.data[i-1].odo - props.data[i-2].odo: null) || '-'}</td>
+                            <td>{parseFloat(((props.data[i-2]) ? props.data[i-1].odo / props.data[i-2].quantiyLtrs: 0).toFixed(2)) || '-'}</td>
                         </tr>
                     })
                 }

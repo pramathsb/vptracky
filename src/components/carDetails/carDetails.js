@@ -3,10 +3,15 @@ import React from 'react';
 function carDetails (props) {
 
     let x = window.x = {...props.data}
-    let tifOptions;
     String.prototype.capitalize = function() {
-        return this.charAt(0).toUpperCase() + this.slice(1);
+        return (this.charAt(0).toUpperCase() + this.slice(1));
     }
+
+    Date.prototype.addDays = function(days) {
+        this.setDate(this.getDate() + parseInt(days));
+        return this;
+    };
+
     return (
         <div className="card">
             <div className="card-body">
@@ -18,6 +23,11 @@ function carDetails (props) {
                             </div>
                         )
                     })}
+
+                    <div className='col-3'>
+                        <strong>Service Due on</strong> : {(new Date(x.dateOfPurchase).addDays(60)).toDateString()}
+                    </div>
+
                 </div>
             </div>
         </div>

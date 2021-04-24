@@ -1,6 +1,8 @@
 {
   "hosting": {
+    "site": "psb-vptracky",
     "public": "build",
+    
     "ignore": [
       "firebase.json",
       "**/.*",

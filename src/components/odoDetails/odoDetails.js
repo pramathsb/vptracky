@@ -28,7 +28,7 @@ function odoDetails(props) {
                 else return <td key={index}>{odoList[key]}</td>;
               })}
 
-              <td>{props.data[i - 1].quantiyLtrs}</td>
+              <td>{props.data[i - 1 >= 0 ? i - 1 : 0].quantityLtrs}</td>
 
               <td>
                 {(props.data[i - 2]
@@ -40,7 +40,7 @@ function odoDetails(props) {
                 {parseFloat(
                   (props.data[i - 2]
                     ? (props.data[i - 1].odo - props.data[i - 2].odo) /
-                      props.data[i - 2].quantiyLtrs
+                      props.data[i - 2].quantityLtrs
                     : 0
                   ).toFixed(2)
                 ) || "-"}
@@ -49,9 +49,9 @@ function odoDetails(props) {
               <td>
                 {(
                   totalCapacity +
-                  props.data[i - 1].quantiyLtrs -
+                  props.data[i - 1 >= 0 ? i - 1 : 0].quantityLtrs -
                   (props.data[i - 2] !== undefined
-                    ? props.data[i - 2].quantiyLtrs
+                    ? props.data[i - 2].quantityLtrs
                     : 0)
                 ).toFixed(2)}
               </td>

@@ -23,7 +23,7 @@ class App extends React.Component {
           odo: 0,
           fuelPrice: 0,
           quantiyRs: 0,
-          quantiyLtrs: 10,
+          quantityLtrs: 10,
           // prevCapactiy: 0,
         },
         {
@@ -32,7 +32,7 @@ class App extends React.Component {
           odo: 20,
           fuelPrice: 68.3,
           quantiyRs: 1000,
-          quantiyLtrs: 14.64,
+          quantityLtrs: 14.64,
           // prevCapactiy: 5,
         },
         {
@@ -41,7 +41,7 @@ class App extends React.Component {
           odo: 176,
           fuelPrice: 67.55,
           quantiyRs: 2921,
-          quantiyLtrs: 43.23,
+          quantityLtrs: 43.23,
           // prevCapactiy: 20,
         },
         {
@@ -50,7 +50,7 @@ class App extends React.Component {
           odo: 840,
           fuelPrice: 66.75,
           quantiyRs: 1799,
-          quantiyLtrs: 26.96,
+          quantityLtrs: 26.96,
           // prevCapactiy: 20,
         },
         {
@@ -59,7 +59,7 @@ class App extends React.Component {
           odo: 1631,
           fuelPrice: 68.95,
           quantiyRs: 2825.57,
-          quantiyLtrs: 40.98,
+          quantityLtrs: 40.98,
           // prevCapactiy: 5,
         },
         {
@@ -68,7 +68,7 @@ class App extends React.Component {
           odo: 2407,
           fuelPrice: 77.7,
           quantiyRs: 3073.81,
-          quantiyLtrs: 39.56,
+          quantityLtrs: 39.56,
           // prevCapactiy: 6,
         },
         {
@@ -77,7 +77,7 @@ class App extends React.Component {
           odo: 3185,
           fuelPrice: 78.65,
           quantiyRs: 3383.52,
-          quantiyLtrs: 43.02,
+          quantityLtrs: 43.02,
           // prevCapactiy: 6,
         },
         {
@@ -86,7 +86,7 @@ class App extends React.Component {
           odo: 3952,
           fuelPrice: 76,
           quantiyRs: 3383.52,
-          quantiyLtrs: 43.8,
+          quantityLtrs: 43.8,
           // prevCapactiy: 6,
         },
         {
@@ -95,7 +95,7 @@ class App extends React.Component {
           odo: 4793,
           fuelPrice: 78.8,
           quantiyRs: 3500.3,
-          quantiyLtrs: 44.42,
+          quantityLtrs: 44.42,
           // prevCapactiy: 6,
         },
         {
@@ -104,7 +104,7 @@ class App extends React.Component {
           odo: 5405,
           fuelPrice: 78.41,
           quantiyRs: 2486.38,
-          quantiyLtrs: 31.71,
+          quantityLtrs: 31.71,
           // prevCapactiy: 6,
         },
         {
@@ -113,7 +113,7 @@ class App extends React.Component {
           odo: 6277,
           fuelPrice: 79.5,
           quantiyRs: 3121.7,
-          quantiyLtrs: 39.26,
+          quantityLtrs: 39.26,
           // prevCapactiy: 6,
         },
         {
@@ -122,7 +122,7 @@ class App extends React.Component {
           odo: 6855,
           fuelPrice: 87.1,
           quantiyRs: 3500.55,
-          quantiyLtrs: 40.19,
+          quantityLtrs: 40.19,
           // prevCapactiy: 6,
         },
         {
@@ -131,7 +131,7 @@ class App extends React.Component {
           odo: 7630,
           fuelPrice: 87.1,
           quantiyRs: 3399.5,
-          quantiyLtrs: 39.03,
+          quantityLtrs: 39.03,
           // prevCapactiy: 6,
         },
         {
@@ -140,7 +140,7 @@ class App extends React.Component {
           odo: 8341,
           fuelPrice: 87.2,
           quantiyRs: 3401.7,
-          quantiyLtrs: 39.01,
+          quantityLtrs: 39.01,
           // prevCapactiy: 6,
         },
         {
@@ -149,7 +149,7 @@ class App extends React.Component {
           odo: 9086,
           fuelPrice: 86.5,
           quantiyRs: 3200.5,
-          quantiyLtrs: 37.0,
+          quantityLtrs: 37.0,
           // prevCapactiy: 6,
         },
       ],

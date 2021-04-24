@@ -1,12 +1,14 @@
 function carDetails(props) {
   let x = (window.x = { ...props.data });
-  String.prototype.capitalize = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+
+  let capitalize = function (str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
-  Date.prototype.addDays = function (days) {
-    this.setDate(this.getDate() + parseInt(days));
-    return this;
+  let addDayss = function (curDate, addDays) {
+    return new Date(
+      new Date(curDate).setDate(new Date(curDate).getDate() + parseInt(addDays))
+    ).toDateString();
   };
 
   return (
@@ -16,14 +18,13 @@ function carDetails(props) {
           {Object.keys(x).map((key, index) => {
             return (
               <div className="col-3" key={index}>
-                <strong>{key.capitalize()}</strong> : {x[key]}
+                <strong>{capitalize(key)}</strong> : {x[key]}
               </div>
             );
           })}
 
           <div className="col-3">
-            <strong>Service Due on</strong> :{" "}
-            {new Date(x.dateOfPurchase).addDays(60).toDateString()}
+            <strong>Service Due on</strong> : {addDayss(x.dateOfPurchase, 60)}
           </div>
         </div>
       </div>

@@ -1,5 +1,3 @@
-import React from "react";
-
 function odoDetails(props) {
   let i = 0,
     totalCapacity = 48;

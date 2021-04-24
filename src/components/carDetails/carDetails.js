@@ -1,5 +1,3 @@
-import React from "react";
-
 function carDetails(props) {
   let x = (window.x = { ...props.data });
   String.prototype.capitalize = function () {

@@ -1,86 +1,70 @@
-function odoDetails(props) {
-  let i = 0,
-    totalCapacity = 48;
-
-  const renderColumnCapacity = (table, index) => {
-    const row = table[index].quantityLtrs;
-    return <>{row}</>;
-  };
+function OdoDetails(props) {
+  const headings = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
 
   const renderColumnDistance = (table, index) => {
-    const row = table[index].odo;
-    const prevRow = table[index - 1]?.odo;
-    return <>{index === 0 ? "-" : row - prevRow}</>;
+    const currOdo = table[index].odo;
+    const prevOdo = table[index - 1]?.odo;
+    return <>{index === 0 ? "-" : currOdo - prevOdo}</>;
   };
 
   const renderColumnMileage = (table, index) => {
-    const row = table[index].odo;
-    const prevRow = table[index - 1]?.odo;
-    const prevRowFuelConsumed = table[index - 1]?.quantityLtrs;
-    const prevRowFullTank = table[index - 1]?.fullTank;
-    return <>{index === 0 ? "-" : prevRowFullTank ? ((row - prevRow) / prevRowFuelConsumed).toFixed(2) : "-"}</>;
+    const currOdo = table[index].odo;
+    const prevOdo = table[index - 1]?.odo;
+    const currFuelConsumed = table[index].quantityLtrs;
+    const currFullTank = table[index]?.fullTank;
+    const prevFullTank = table[index - 1]?.fullTank;
+    return <>{index === 0 ? "-" : currFullTank && prevFullTank ? ((currOdo - prevOdo) / currFuelConsumed).toFixed(2) : "-"}</>;
   };
 
-  const renderColumnConsumed = (table, index) => {
-    const row = table[index].quantityLtrs;
-    const prevRow = table[index - 1]?.quantityLtrs;
-    const prevRowFuelConsumed = table[index - 1]?.quantityLtrs;
-    const prevRowFullTank = table[index - 1]?.fullTank;
-    return <>{index === 0 ? "-" : prevRowFullTank ? (48 - row + (48 - prevRow)).toFixed(2) : "-"}</>;
-  };
-
-  const renderColumns = (table, index) => {
+  const renderColumns = (table, index, rKey) => {
     return (
-      <>
-        <td>{renderColumnCapacity(table, index)}</td>
-        <td>{renderColumnDistance(table, index)}</td>
-        <td>{renderColumnMileage(table, index)}</td>
-        <td>{renderColumnConsumed(table, index)}</td>
-      </>
+        [<td data-key={rKey++} key={`index${rKey++}`}>
+          {renderColumnDistance(table, index)}
+        </td>,
+        <td data-key={rKey++} key={`index${rKey++}`}>
+          {renderColumnMileage(table, index)}
+        </td>]
     );
   };
 
   const renderTable = (table) => {
+    let rKey = 0;
     return table.map((row, index) => {
       return (
-        <tr>
+        <tr data-key={rKey++} key={`index${rKey++}`}>
           {Object.entries(row).map(([key, value], index) => {
             if (key === "id" || key === "fullTank") return false;
-            /* if (key === "odo") return false;
-            if (key === "fuelPrice") return false;
-            if (key === "quantityRs") return false;
-            if (key === "quantityLtrs") return false; */
             return (
-              <>
-                <td>{value}</td>
-              </>
+                <td data-key={rKey++} key={`index${rKey++}`}>
+                  {value}
+                </td>
             );
           })}
 
-          {renderColumns(table, index)}
+          {renderColumns(table, index, rKey)}
         </tr>
       );
     });
   };
 
   return (
+    <div>
     <table className="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Date</th>
-          <th scope="col">ODO Reading</th>
-          <th scope="col">Fuel Price in Rs.</th>
-          <th scope="col">Qty in Rs.</th>
-          <th scope="col">Qty in Ltrs.</th>
-          <th scope="col">Capacity</th>
-          <th scope="col">Distance</th>
-          <th scope="col">Mileage</th>
-          <th scope="col">Consumed</th>
+          {headings.map((heading, index) => {
+            return (
+              <th scope="col" key={heading}>
+                {heading}
+              </th>
+            );
+          })}
         </tr>
       </thead>
       <tbody>{renderTable(props.data)}</tbody>
-    </table>
+      </table>
+      </div>
   );
 }
 
-export default odoDetails;
+export default OdoDetails;

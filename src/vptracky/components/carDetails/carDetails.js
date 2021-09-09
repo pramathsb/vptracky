@@ -6,9 +6,7 @@ function carDetails(props) {
   };
 
   let addDayss = function (curDate, addDays) {
-    return new Date(
-      new Date(curDate).setDate(new Date(curDate).getDate() + parseInt(addDays))
-    ).toDateString();
+    return new Date(new Date(curDate).setDate(new Date(curDate).getDate() + parseInt(addDays))).toDateString();
   };
 
   return (
@@ -17,13 +15,13 @@ function carDetails(props) {
         <div className="row no-gutters">
           {Object.keys(x).map((key, index) => {
             return (
-              <div className="col-3" key={index}>
+              <div className="col-3" data-key={index} key={index}>
                 <strong>{capitalize(key)}</strong> : {x[key]}
               </div>
             );
           })}
 
-          <div className="col-3">
+          <div className="col-3" data-key={"test"}>
             <strong>Service Due on</strong> : {addDayss(x.dateOfPurchase, 60)}
           </div>
         </div>

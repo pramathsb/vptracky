@@ -1,46 +1,34 @@
-import { useState, useEffect, memo } from "react";
-
-let totalDistance = 0,
-  totalFuel = 0,
-  averageMileage = 0,
-  table = {};
+import { memo } from "react";
 
 export default memo(function OdoDetails(props) {
-  const [state, setState] = useState(props.data);
-  const generateData = () => {
-    let tabelz = {};
-    tabelz.head = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
-    tabelz.body = state.map((row, index) => {
-      totalDistance = row.odo;
-      totalFuel = totalFuel + row.quantityLtrs;
-      averageMileage = (totalDistance / totalFuel).toFixed(2);
+  let totalDistance = 0,
+    totalFuel = 0,
+    averageMileage = 0;
+  const table = {};
+  table.head = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
+  table.body = props.data.map((row, index) => {
+    totalDistance = row.odo;
+    totalFuel = totalFuel + row.quantityLtrs;
+    averageMileage = (totalDistance / totalFuel).toFixed(2);
 
-      const currOdo = row.odo;
-      const prev = state[index - 1];
-      const prevOdo = prev?.odo;
-      const currFuelConsumed = row.quantityLtrs;
-      const currFullTank = row.fullTank;
-      const prevFullTank = prev?.fullTank;
+    const currOdo = row.odo;
+    const prev = props.data[index - 1];
+    const prevOdo = prev?.odo;
+    const currFuelConsumed = row.quantityLtrs;
+    const currFullTank = row.fullTank;
+    const prevFullTank = prev?.fullTank;
 
-      const distance = index === 0 ? "-" : currOdo - prevOdo;
-      const mileage = index === 0 ? "-" : currFullTank && prevFullTank ? (distance / currFuelConsumed).toFixed(2) : "-";
+    const distance = index === 0 ? "-" : currOdo - prevOdo;
+    const mileage = index === 0 ? "-" : currFullTank && prevFullTank ? (distance / currFuelConsumed).toFixed(2) : "-";
 
-      return { ...row, distance, mileage };
-    });
+    return { ...row, distance, mileage };
+  });
 
-    return tabelz;
-  };
-
-  useEffect(() => {
-    props.calculatedCarData({
-      totalDistance,
-      totalFuel: totalFuel.toFixed(2),
-      averageMileage,
-    });
-    setState(props.data);
-  }, [props.data]);
-
-  table = generateData();
+  props.calculatedCarData({
+    totalDistance,
+    totalFuel: totalFuel.toFixed(2),
+    averageMileage,
+  });
 
   const renderHeading = (head) => {
     return head.map((heading, index) => {

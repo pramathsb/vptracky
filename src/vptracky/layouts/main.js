@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import CarDetails from "../components/carDetails/carDetails";
 import OdoDetails from "../components/odoDetails/odoDetails";
 
 function Vpt(props) {
-  const [state] = useState({
+  const [state, setState] = useState({
     carData: {
       brand: "Hyundai",
       model: "i10 Grand Nios",
@@ -210,6 +210,12 @@ function Vpt(props) {
     ],
   });
 
+  const calculatedCarData = useCallback(({ totalDistance, totalFuel, averageMileage }) => {
+    setState((state) => {
+      return { ...state, carData: { ...state.carData, totalDistance, totalFuel, averageMileage } };
+    });
+  }, []);
+
   return (
     <div className="container">
       <h4 className="mt-4">Vehicle Performance Tracker</h4>
@@ -234,7 +240,7 @@ function Vpt(props) {
 
       <h5>My Vehicle Data</h5>
 
-      <OdoDetails data={state.odoData} />
+      <OdoDetails data={state.odoData} calculatedCarData={calculatedCarData} />
     </div>
   );
 }

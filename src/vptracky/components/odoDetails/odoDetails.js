@@ -1,25 +1,46 @@
-import { useState } from "react";
+import { useState, useEffect, memo } from "react";
 
-function OdoDetails(props) {
-  const headings = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
+let totalDistance = 0,
+  totalFuel = 0,
+  averageMileage = 0,
+  table = {};
 
-  const newTable = {};
-  const [state, setState] = useState({});
+export default memo(function OdoDetails(props) {
+  const [state, setState] = useState(props.data);
+  const generateData = () => {
+    let tabelz = {};
+    tabelz.head = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
+    tabelz.body = state.map((row, index) => {
+      totalDistance = row.odo;
+      totalFuel = totalFuel + row.quantityLtrs;
+      averageMileage = (totalDistance / totalFuel).toFixed(2);
 
-  newTable.head = ["Date", "ODO Reading", "Fuel Price in Rs.", "Qty in Rs.", "Qty in Ltrs.", "Distance", "Mileage"];
-  newTable.body = props.data.map((row, index) => {
-    const currOdo = row.odo;
-    const prev = props.data[index - 1];
-    const prevOdo = prev?.odo;
-    const currFuelConsumed = row.quantityLtrs;
-    const currFullTank = row.fullTank;
-    const prevFullTank = prev?.fullTank;
+      const currOdo = row.odo;
+      const prev = state[index - 1];
+      const prevOdo = prev?.odo;
+      const currFuelConsumed = row.quantityLtrs;
+      const currFullTank = row.fullTank;
+      const prevFullTank = prev?.fullTank;
 
-    const distance = index === 0 ? "-" : currOdo - prevOdo;
-    const mileage = index === 0 ? "-" : currFullTank && prevFullTank ? (distance / currFuelConsumed).toFixed(2) : "-";
+      const distance = index === 0 ? "-" : currOdo - prevOdo;
+      const mileage = index === 0 ? "-" : currFullTank && prevFullTank ? (distance / currFuelConsumed).toFixed(2) : "-";
 
-    return { ...row, distance, mileage };
-  });
+      return { ...row, distance, mileage };
+    });
+
+    return tabelz;
+  };
+
+  useEffect(() => {
+    props.calculatedCarData({
+      totalDistance,
+      totalFuel: totalFuel.toFixed(2),
+      averageMileage,
+    });
+    setState(props.data);
+  }, [props.data]);
+
+  table = generateData();
 
   const renderHeading = (head) => {
     return head.map((heading, index) => {
@@ -44,16 +65,16 @@ function OdoDetails(props) {
     });
   };
 
+  console.log("Odo Rendered");
+
   return (
     <div>
       <table className="table table-striped">
         <thead>
-          <tr>{renderHeading(newTable.head)}</tr>
+          <tr>{renderHeading(table.head)}</tr>
         </thead>
-        <tbody>{renderBody(newTable.body)}</tbody>
+        <tbody>{renderBody(table?.body)}</tbody>
       </table>
     </div>
   );
-}
-
-export default OdoDetails;
+});

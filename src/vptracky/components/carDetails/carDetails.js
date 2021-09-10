@@ -9,6 +9,8 @@ function carDetails(props) {
     return new Date(new Date(curDate).setDate(new Date(curDate).getDate() + parseInt(addDays))).toDateString();
   };
 
+  console.log("Car Details Rendered");
+
   return (
     <div className="card">
       <div className="card-body">

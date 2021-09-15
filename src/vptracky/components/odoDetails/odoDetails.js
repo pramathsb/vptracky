@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 
 export default memo(function OdoDetails(props) {
   let totalDistance = 0,
@@ -24,10 +24,12 @@ export default memo(function OdoDetails(props) {
     return { ...row, distance, mileage };
   });
 
-  props.calculatedCarData({
-    totalDistance,
-    totalFuel: totalFuel.toFixed(2),
-    averageMileage,
+  useEffect(() => {
+    props.calculatedCarData({
+      totalDistance,
+      totalFuel: totalFuel.toFixed(2),
+      averageMileage,
+    });
   });
 
   const renderHeading = (head) => {
@@ -43,10 +45,10 @@ export default memo(function OdoDetails(props) {
   const renderBody = (body) => {
     return body.map((col, index) => {
       return (
-        <tr>
+        <tr key={col.id}>
           {Object.entries(col).map(([key, value], index) => {
             if (key === "id" || key === "fullTank") return false;
-            return <td>{value}</td>;
+            return <td key={index}>{value}</td>;
           })}
         </tr>
       );

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
-import CarDetails from "../components/carDetails/carDetails";
-import OdoDetails from "../components/odoDetails/odoDetails";
+import CarDetails from "./components/carDetails/carDetails";
+import OdoDetails from "./components/odoDetails/odoDetails";
 
 function Vpt(props) {
   const [state, setState] = useState({

@@ -182,6 +182,15 @@
       "qtyRs": 4048.51,
       "qtyLtrs": 42.26,
       "fullTank": true
+    },
+    {
+      "id": 19,
+      "date": "20/09/2021",
+      "odo": 12474,
+      "fuelPrice": 95.5,
+      "qtyRs": 4001.45,
+      "qtyLtrs": 41.9,
+      "fullTank": true
     }
   ]
 }

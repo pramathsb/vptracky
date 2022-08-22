@@ -328,6 +328,35 @@
       "qtyRs": 1094.3,
       "qtyLtrs": 10,
       "fullTank": false
+    },
+
+    {
+      "id": 35,
+      "date": "25/06/2022",
+      "odo": 23418,
+      "fuelPrice": 87.89,
+      "qtyRs": 3920.77,
+      "qtyLtrs": 44.61,
+      "fullTank": true
+    },
+
+    {
+      "id": 36,
+      "date": "13/08/2022",
+      "odo": 24266,
+      "fuelPrice": 88.17,
+      "qtyRs": 3899.75,
+      "qtyLtrs": 44.23,
+      "fullTank": true
+    },
+    {
+      "id": 37,
+      "date": "13/08/2022",
+      "odo": 25176,
+      "fuelPrice": 87.89,
+      "qtyRs": 3800.36,
+      "qtyLtrs": 43.23,
+      "fullTank": true
     }
   ]
 }

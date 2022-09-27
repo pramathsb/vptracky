@@ -1,0 +1,52 @@
+{
+  "common": {
+    "welcome": "Welcome to Vptracky",
+    "fullName": "Vehicle Performance Tracker"
+  },
+
+  "cta": {
+    "login": "login",
+    "signup": "Sign Up",
+    "addnew": "Add New Vehicle"
+  },
+
+  "navigation": {
+    "home": "Home",
+    "vehicle": "Vehicle",
+    "dashboard": "Dashboard",
+    "fuel": "Fuel",
+    "service": "Service"
+  },
+
+  "dashboard": {
+    "type": "Type",
+    "brand": "Brand",
+    "model": "Model",
+    "fuelType": "Fuel Type",
+    "fuelCapacity": "Fuel Capacity",
+    "dateOfPurchase": "Date of purchase",
+    "age": "Age",
+    "ratedMileage": "Rated Mileage",
+    "insauranceRenewalDate": "Insaurance Renewal Date",
+    "nextServiceDate": "Next Service Date",
+    "nextServiceKm": "Next Service KM",
+    "distanceTravelled": "Distance Travelled",
+    "totalFuelConsumedLtrs": "total fuel consumed ltrs",
+    "totalFuelConsumedCost": "total fuel consumed cost",
+    "totalAverageMileage": "total average mileage",
+    "costPerKm": "cost per km",
+    "minDistOnFullTank": "min dist on full tank",
+    "maxDistOnFullTank": "max dist on full tank",
+    "avgDistOnFullTank": "avg dist on full tank",
+    "table": {
+      "date": "Date of Fuel",
+      "odo": "Odo Reading",
+      "price": "Price Of Fuel",
+      "quantity": "Quantity",
+      "totalPrice": "Total price",
+      "fulltank": "Full Tank",
+      "distance": "Last fill distance",
+      "mileage": "Mileage"
+    }
+  }
+}

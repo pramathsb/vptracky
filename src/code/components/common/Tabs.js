@@ -1,58 +1,39 @@
 import React from "react";
+import { NavLink, Routes, Route, useParams } from "react-router-dom";
 
-function Tabs() {
-  const [activeTab, setActiveTab] = React.useState(null);
-
+function Tabs(props) {
   let generatedTabs = [],
-    generatedComponents = [],
-    startingTabIndex = null;
+    generatedComponents = [];
 
-  const tabs = [
-    {
-      tabName: "tabName1",
-      component: "text-1",
-    },
-    {
-      tabName: "tabName2",
-      component: "text-2",
-    },
-  ];
-
+  const tabs = props.tabs.dynamic,
+    { view } = useParams();
   const renderTabs = (tab, strIndex) => {
-    const className = strIndex === activeTab ? "nav-link active" : "nav-link";
     return (
       <li className="nav-item" key={strIndex}>
-        <a
-          className={className}
-          href="#dashboard"
-          onClick={(e) => {
-            e.preventDefault();
-            setActiveTab(strIndex);
-          }}
-        >
+        <NavLink to={tab.route} className="nav-link">
           {tab.tabName}
-        </a>
+        </NavLink>
       </li>
     );
   };
 
   const renderComponents = (tab, strIndex) => {
-    const className = strIndex === activeTab ? "tab-pane fade show active" : "tab-pane fade";
     return (
-      <div className={className} role="tabpanel" key={strIndex}>
-        {tab.component}
-      </div>
+      <Route
+        key={strIndex}
+        path={tab.route}
+        element={
+          <div className="tab-pane fade show active" role="tabpanel">
+            {tab.component}
+          </div>
+        }
+      />
     );
   };
 
   const generateTabs = () => {
     tabs.forEach((tab, index) => {
       const strIndex = `tab_${index}`;
-
-      if (index === 0) {
-        startingTabIndex = index === 0 && strIndex;
-      }
-
       generatedTabs.push(renderTabs(tab, strIndex));
       generatedComponents.push(renderComponents(tab, strIndex));
     });
@@ -60,15 +41,12 @@ function Tabs() {
 
   generateTabs();
 
-  React.useEffect(() => {
-    setActiveTab(startingTabIndex);
-  }, [startingTabIndex]);
-
   return (
     <>
       <ul className="nav nav-tabs">{generatedTabs}</ul>
-
-      <div className="tab-content">{generatedComponents}</div>
+      <div className="tab-content">
+        <Routes>{generatedComponents}</Routes>
+      </div>
     </>
   );
 }

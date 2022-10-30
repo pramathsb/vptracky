@@ -15,14 +15,6 @@ function Navigation() {
             Vehicles
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink
-            to="/vehicles/nios"
-            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-          >
-            Nios
-          </NavLink>
-        </li>
       </ul>
     </div>
   );

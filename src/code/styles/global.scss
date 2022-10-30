@@ -134,3 +134,22 @@ section {
   border: 1px solid #ececec;
   border-radius: 10px;
 }
+
+.cmodal {
+}
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+}
+
+.modal-dialog {
+  width: auto;
+  max-width: none;
+}
+
+.modal-content {
+  width: 600px;
+}

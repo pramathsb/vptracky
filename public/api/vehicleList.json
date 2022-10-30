@@ -1,11 +1,14 @@
 {
-  "123": {
-    "name": "Nios"
-  },
-  "1223": {
-    "name": "P220"
-  },
-  "1234": {
+  "wego": {
+    "route": "wego",
     "name": "Wego"
+  },
+  "p220": {
+    "route": "p220",
+    "name": "Pulsar 220"
+  },
+  "nios": {
+    "route": "nios",
+    "name": "Grand i10 Nios"
   }
 }

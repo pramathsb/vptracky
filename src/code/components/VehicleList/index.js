@@ -39,7 +39,7 @@ function VehicleList(props) {
   return (
     <>
       {store?.vehicleList && renderVehicles()}
-      <AddVehicleModal />
+      <AddVehicleModal store={store} dispatch={dispatch} />
     </>
   );
 }

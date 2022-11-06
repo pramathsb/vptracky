@@ -7,7 +7,15 @@
   "cta": {
     "login": "login",
     "signup": "Sign Up",
-    "addnew": "Add New Vehicle"
+    "addnew": "Add New Vehicle",
+    "saveChanges": "Save Changes",
+    "addNewVehicle": "Add New Vehicle",
+    "close": "Close"
+  },
+
+  "forms": {
+    "vehicleName": "Vehicle Name",
+    "vehicleId": "Vehicle ID"
   },
 
   "navigation": {

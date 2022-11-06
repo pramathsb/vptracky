@@ -5,7 +5,9 @@ function Modal(props) {
   const [visiblity, setVisiblity] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const { title, content, footer, closeModal } = props;
+  const { title, content, footer, closeModal, store } = props;
+
+  const { TXT } = store;
 
   const enableModal = () => {
     setVisiblity(true);
@@ -34,7 +36,7 @@ function Modal(props) {
               <div className='modal-body'>{content || <p>Modal body text goes here.</p>}</div>
               <div className='modal-footer'>
                 <button type='button' className='btn btn-secondary' onClick={disableModal}>
-                  Close
+                  {TXT.cta.close}
                 </button>
                 {footer}
               </div>
@@ -51,7 +53,7 @@ function Modal(props) {
     <>
       {visiblity && modalContent()}
       <button onClick={enableModal} className='btn btn-info me-2'>
-        Add New Vehicles
+        {TXT.cta.addNewVehicle}
       </button>
     </>
   );

@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom';
 function VehicleInfo(props) {
   const { dispatch, store } = props,
     { vehicleId } = useParams();
-  console.log(useParams());
+  const vehicle = (store?.vehicleId && store?.vehicleId[vehicleId]) || false;
+  console.log(vehicle);
   const { TXT } = store;
 
   const renderDashboard = () => {
@@ -107,7 +108,7 @@ function VehicleInfo(props) {
 
   return (
     <>
-      <h2 className='my-4'>{vehicleId}</h2>
+      <h2 className='my-4'>{vehicle.name}</h2>
       <Tabs tabs={tabs} />
     </>
   );

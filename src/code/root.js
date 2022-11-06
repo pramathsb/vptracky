@@ -22,12 +22,12 @@ function Vptracky() {
     })();
   }, []);
 
-  const content = store.TXT;
+  const { TXT } = store;
 
   return (
     <>
       {store.loader && <Loader />}
-      {content && (
+      {TXT && (
         <Routes>
           <Route element={<HomeTemplate store={store} dispatch={dispatch} />}>
             <Route index element={<Home store={store} dispatch={dispatch} />} />

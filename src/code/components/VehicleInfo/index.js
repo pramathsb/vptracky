@@ -2,69 +2,79 @@ import axios from 'axios';
 import React from 'react';
 import Tabs from '../common/Tabs';
 import { useParams } from 'react-router-dom';
+import FuelTable from './FuelTable';
 
 function VehicleInfo(props) {
   const { dispatch, store } = props,
     { vehicleId } = useParams();
   const vehicle = (store?.vehicleId && store?.vehicleId[vehicleId]) || false;
-  console.log(vehicle);
+  const { dashBoardData, fuelData } = vehicle;
   const { TXT } = store;
 
   const renderDashboard = () => {
     return (
       <div className='row flex-wrap g-0 dashboard p-4 mb-4'>
-        <div className='col-4 p-2'>{TXT.dashboard.type}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.brand}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.model}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.fuelType}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.fuelCapacity}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.dateOfPurchase}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.age}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.ratedMileage}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.insauranceRenewalDate}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.nextServiceDate}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.nextServiceKm}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.distanceTravelled}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.totalFuelConsumedLtrs}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.totalFuelConsumedCost}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.totalAverageMileage}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.costPerKm}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.model}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.minDistOnFullTank}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.maxDistOnFullTank}: N/A</div>
-        <div className='col-4 p-2'>{TXT.dashboard.avgDistOnFullTank}: N/A</div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.type}: {dashBoardData.type}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.brand}: {dashBoardData.brand}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.model}: {dashBoardData.model}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.fuelType}: {dashBoardData.fuelType}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.fuelCapacity}: {dashBoardData.fuelCapacity}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.dateOfPurchase}: {dashBoardData.dateOfPurchase}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.age}: {dashBoardData.age}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.ratedMileage}: {dashBoardData.ratedMileage}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.insuranceRenewalDate}: {dashBoardData.insuranceRenewalDate}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.nextServiceDate}: {dashBoardData.nextServiceDate}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.nextServiceKm}: {dashBoardData.nextServiceKm}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.distanceTraveled}: {dashBoardData.distanceTraveled}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.totalFuelConsumedLtrs}: {dashBoardData.totalFuelConsumedLtrs}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.totalFuelConsumedCost}: {dashBoardData.totalFuelConsumedCost}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.totalAverageMileage}: {dashBoardData.totalAverageMileage}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.costPerKm}: {dashBoardData.costPerKm}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.model}: {dashBoardData.model}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.minDistOnFullTank}: {dashBoardData.minDistOnFullTank}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.maxDistOnFullTank}: {dashBoardData.maxDistOnFullTank}
+        </div>
+        <div className='col-4 p-2'>
+          {TXT.dashboard.avgDistOnFullTank}: {dashBoardData.avgDistOnFullTank}
+        </div>
       </div>
-    );
-  };
-
-  const renderFuelTable = () => {
-    return (
-      <table className='table table-bordered'>
-        <thead>
-          <tr>
-            <th>{TXT.dashboard.table.date}</th>
-            <th>{TXT.dashboard.table.odo}</th>
-            <th>{TXT.dashboard.table.price}</th>
-            <th>{TXT.dashboard.table.quantity}</th>
-            <th>{TXT.dashboard.table.totalPrice}</th>
-            <th>{TXT.dashboard.table.fulltank}</th>
-            <th>{TXT.dashboard.table.distance}</th>
-            <th>{TXT.dashboard.table.mileage}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-          </tr>
-        </tbody>
-      </table>
     );
   };
 
@@ -73,12 +83,12 @@ function VehicleInfo(props) {
       {
         route: 'dashboard',
         tabName: 'Dashboard',
-        component: renderDashboard(),
+        component: dashBoardData && renderDashboard(),
       },
       {
         route: 'fuel',
         tabName: 'Fuel',
-        component: renderFuelTable(),
+        component: fuelData && <FuelTable fuelData={fuelData} TXT={TXT} />,
       },
       {
         route: 'service',
@@ -104,7 +114,7 @@ function VehicleInfo(props) {
         dispatch({ type: 'HIDE_LOADER' });
       }
     })();
-  }, []);
+  }, [dispatch, store?.vehicleId, vehicleId]);
 
   return (
     <>

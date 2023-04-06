@@ -9,6 +9,477 @@
   },
   "nios": {
     "route": "nios",
-    "name": "Grand i10 Nios"
+    "name": "Grand i10 Nios",
+    "dashBoardData": {
+      "brand": "Hyundai",
+      "model": "i10 Grand Nios",
+      "type": "Car",
+      "fuelType": "Diesel",
+      "fuel": "48 litres",
+      "ratedMileage": "25 Km/l",
+      "actualMileage": "20 Km/l",
+      "topSpeed": "110 km/h",
+      "age": "",
+      "dateOfPurchase": "09/02/2020"
+    },
+    "fuelData": [
+      {
+        "id": 0,
+        "date": "9/2/2020",
+        "odo": 0,
+        "fuelPrice": 0,
+        "qtyRs": 0,
+        "qtyLtrs": 10,
+        "fullTank": false
+      },
+      {
+        "id": 1,
+        "date": "9/2/2020",
+        "odo": 20,
+        "fuelPrice": 68.3,
+        "qtyRs": 1000,
+        "qtyLtrs": 14.64,
+        "fullTank": false
+      },
+      {
+        "id": 2,
+        "date": "19/2/2020",
+        "odo": 176,
+        "fuelPrice": 67.55,
+        "qtyRs": 2921,
+        "qtyLtrs": 43.23,
+        "fullTank": true
+      },
+      {
+        "id": 3,
+        "date": "06/05/2020",
+        "odo": 840,
+        "fuelPrice": 66.75,
+        "qtyRs": 1799,
+        "qtyLtrs": 26.96,
+        "fullTank": true
+      },
+      {
+        "id": 4,
+        "date": "10/06/2020",
+        "odo": 1631,
+        "fuelPrice": 68.95,
+        "qtyRs": 2825.57,
+        "qtyLtrs": 40.98,
+        "fullTank": true
+      },
+      {
+        "id": 5,
+        "date": "03/07/2020",
+        "odo": 2407,
+        "fuelPrice": 77.7,
+        "qtyRs": 3073.81,
+        "qtyLtrs": 39.56,
+        "fullTank": true
+      },
+      {
+        "id": 6,
+        "date": "08/09/2020",
+        "odo": 3185,
+        "fuelPrice": 78.65,
+        "qtyRs": 3383.52,
+        "qtyLtrs": 43.02,
+        "fullTank": true
+      },
+      {
+        "id": 7,
+        "date": "02/10/2020",
+        "odo": 3952,
+        "fuelPrice": 76,
+        "qtyRs": 3328.8,
+        "qtyLtrs": 43.8,
+        "fullTank": true
+      },
+      {
+        "id": 8,
+        "date": "07/12/2020",
+        "odo": 4793,
+        "fuelPrice": 78.8,
+        "qtyRs": 3500.3,
+        "qtyLtrs": 44.42,
+        "fullTank": true
+      },
+      {
+        "id": 9,
+        "date": "25/12/2020",
+        "odo": 5405,
+        "fuelPrice": 78.41,
+        "qtyRs": 2486.38,
+        "qtyLtrs": 31.71,
+        "fullTank": true
+      },
+      {
+        "id": 10,
+        "date": "07/01/2021",
+        "odo": 6277,
+        "fuelPrice": 79.5,
+        "qtyRs": 3121.7,
+        "qtyLtrs": 39.26,
+        "fullTank": true
+      },
+      {
+        "id": 11,
+        "date": "24/02/2021",
+        "odo": 6855,
+        "fuelPrice": 87.1,
+        "qtyRs": 3500.55,
+        "qtyLtrs": 40.19,
+        "fullTank": true
+      },
+      {
+        "id": 12,
+        "date": "14/03/2021",
+        "odo": 7630,
+        "fuelPrice": 87.1,
+        "qtyRs": 3399.5,
+        "qtyLtrs": 39.03,
+        "fullTank": true
+      },
+      {
+        "id": 13,
+        "date": "02/04/2021",
+        "odo": 8341,
+        "fuelPrice": 87.2,
+        "qtyRs": 3401.7,
+        "qtyLtrs": 39.01,
+        "fullTank": true
+      },
+      {
+        "id": 14,
+        "date": "02/04/2021",
+        "odo": 9086,
+        "fuelPrice": 86.5,
+        "qtyRs": 3200.5,
+        "qtyLtrs": 37.0,
+        "fullTank": true
+      },
+      {
+        "id": 15,
+        "date": "10/06/2021",
+        "odo": 9881,
+        "fuelPrice": 93.1,
+        "qtyRs": 1000.0,
+        "qtyLtrs": 10.74,
+        "fullTank": false
+      },
+      {
+        "id": 16,
+        "date": "04/07/2021",
+        "odo": 10105,
+        "fuelPrice": 95.4,
+        "qtyRs": 4000.12,
+        "qtyLtrs": 41.93,
+        "fullTank": true
+      },
+      {
+        "id": 17,
+        "date": "17/07/2021",
+        "odo": 10832,
+        "fuelPrice": 96.27,
+        "qtyRs": 4037.56,
+        "qtyLtrs": 41.94,
+        "fullTank": true
+      },
+      {
+        "id": 18,
+        "date": "28/08/2021",
+        "odo": 11641,
+        "fuelPrice": 95.8,
+        "qtyRs": 4048.51,
+        "qtyLtrs": 42.26,
+        "fullTank": true
+      },
+      {
+        "id": 19,
+        "date": "20/09/2021",
+        "odo": 12474,
+        "fuelPrice": 95.5,
+        "qtyRs": 4001.45,
+        "qtyLtrs": 41.9,
+        "fullTank": true
+      },
+      {
+        "id": 20,
+        "date": "22/10/2021",
+        "odo": 13254,
+        "fuelPrice": 102.92,
+        "qtyRs": 4733.63,
+        "qtyLtrs": 46.05,
+        "fullTank": true
+      },
+      {
+        "id": 21,
+        "date": "01/11/2021",
+        "odo": 14115,
+        "fuelPrice": 106.1,
+        "qtyRs": 4660.97,
+        "qtyLtrs": 43.93,
+        "fullTank": true
+      },
+      {
+        "id": 22,
+        "date": "05/12/2021",
+        "odo": 15019,
+        "fuelPrice": 86.41,
+        "qtyRs": 3328.51,
+        "qtyLtrs": 38.52,
+        "fullTank": true
+      },
+      {
+        "id": 23,
+        "date": "20/12/2021",
+        "odo": 16002,
+        "fuelPrice": 86.97,
+        "qtyRs": 3576.21,
+        "qtyLtrs": 41.12,
+        "fullTank": true
+      },
+      {
+        "id": 24,
+        "date": "26/01/2022",
+        "odo": 16840,
+        "fuelPrice": 85.51,
+        "qtyRs": 3100.59,
+        "qtyLtrs": 36.26,
+        "fullTank": true
+      },
+      {
+        "id": 25,
+        "date": "05/02/2022",
+        "odo": 17543,
+        "fuelPrice": 85.15,
+        "qtyRs": 1500,
+        "qtyLtrs": 17.62,
+        "fullTank": false
+      },
+      {
+        "id": 26,
+        "date": "11/02/2022",
+        "odo": 17930,
+        "fuelPrice": 86.41,
+        "qtyRs": 3400.23,
+        "qtyLtrs": 39.35,
+        "fullTank": true
+      },
+      {
+        "id": 27,
+        "date": "25/03/2022",
+        "odo": 18672,
+        "fuelPrice": 88,
+        "qtyRs": 4732.93,
+        "qtyLtrs": 42,
+        "fullTank": true
+      },
+      {
+        "id": 28,
+        "date": "09/04/2022",
+        "odo": 19493,
+        "fuelPrice": 97.39,
+        "qtyRs": 4000.78,
+        "qtyLtrs": 41.08,
+        "fullTank": true
+      },
+      {
+        "id": 29,
+        "date": "30/04/2022",
+        "odo": 19955,
+        "fuelPrice": 96.89,
+        "qtyRs": 2627.66,
+        "qtyLtrs": 27.12,
+        "fullTank": true
+      },
+      {
+        "id": 30,
+        "date": "03/05/2022",
+        "odo": 20794,
+        "fuelPrice": 101.65,
+        "qtyRs": 1000,
+        "qtyLtrs": 9.84,
+        "fullTank": false
+      },
+      {
+        "id": 31,
+        "date": "03/05/2022",
+        "odo": 20981,
+        "fuelPrice": 96.59,
+        "qtyRs": 4000.76,
+        "qtyLtrs": 41.42,
+        "fullTank": true
+      },
+      {
+        "id": 32,
+        "date": "20/05/2022",
+        "odo": 21694,
+        "fuelPrice": 104.75,
+        "qtyRs": 3999.83,
+        "qtyLtrs": 38.17,
+        "fullTank": true
+      },
+      {
+        "id": 33,
+        "date": "23/05/2022",
+        "odo": 22478,
+        "fuelPrice": 96.5,
+        "qtyRs": 3601.75,
+        "qtyLtrs": 37.32,
+        "fullTank": true
+      },
+      {
+        "id": 34,
+        "date": "12/06/2022",
+        "odo": 23300,
+        "fuelPrice": 109.43,
+        "qtyRs": 1094.3,
+        "qtyLtrs": 10,
+        "fullTank": false
+      },
+      {
+        "id": 35,
+        "date": "25/06/2022",
+        "odo": 23418,
+        "fuelPrice": 87.89,
+        "qtyRs": 3920.77,
+        "qtyLtrs": 44.61,
+        "fullTank": true
+      },
+      {
+        "id": 36,
+        "date": "13/08/2022",
+        "odo": 24266,
+        "fuelPrice": 88.17,
+        "qtyRs": 3899.75,
+        "qtyLtrs": 44.23,
+        "fullTank": true
+      },
+      {
+        "id": 37,
+        "date": "21/08/2022",
+        "odo": 25176,
+        "fuelPrice": 87.89,
+        "qtyRs": 3800.36,
+        "qtyLtrs": 43.23,
+        "fullTank": true
+      },
+      {
+        "id": 38,
+        "date": "01/10/2022",
+        "odo": 25841,
+        "fuelPrice": 87.82,
+        "qtyRs": 3753.42,
+        "qtyLtrs": 42.74,
+        "fullTank": true
+      },
+      {
+        "id": 39,
+        "date": "03/10/2022",
+        "odo": 26017,
+        "fuelPrice": 0,
+        "qtyRs": 0,
+        "qtyLtrs": 0,
+        "fullTank": true
+      },
+      {
+        "id": 40,
+        "date": "08/10/2022",
+        "odo": 26766,
+        "fuelPrice": 88.63,
+        "qtyRs": 2658.9,
+        "qtyLtrs": 30,
+        "fullTank": true
+      },
+      {
+        "id": 41,
+        "date": "20/10/2022",
+        "odo": 27331,
+        "fuelPrice": 87.89,
+        "qtyRs": 3883.86,
+        "qtyLtrs": 44.19,
+        "fullTank": true
+      },
+      {
+        "id": 42,
+        "date": "06/11/2022",
+        "odo": 28229,
+        "fuelPrice": 87.89,
+        "qtyRs": 3364.43,
+        "qtyLtrs": 38.28,
+        "fullTank": true
+      },
+      {
+        "id": 43,
+        "date": "26/11/2022",
+        "odo": 28578,
+        "fuelPrice": 88.31,
+        "qtyRs": 2000.22,
+        "qtyLtrs": 22.65,
+        "fullTank": true
+      },
+
+      {
+        "id": 44,
+        "date": "03/12/2022",
+        "odo": 29374,
+        "fuelPrice": 87.92,
+        "qtyRs": 3500.97,
+        "qtyLtrs": 39.82,
+        "fullTank": true
+      },
+
+      {
+        "id": 45,
+        "date": "14/12/2022",
+        "odo": 30123,
+        "fuelPrice": 88.29,
+        "qtyRs": 3300.28,
+        "qtyLtrs": 37.38,
+        "fullTank": true
+      },
+
+      {
+        "id": 46,
+        "date": "19/12/2022",
+        "odo": 30870,
+        "fuelPrice": 87.89,
+        "qtyRs": 3500,
+        "qtyLtrs": 39.82,
+        "fullTank": true
+      },
+
+      {
+        "id": 48,
+        "date": "05/02/2023",
+        "odo": 31653,
+        "fuelPrice": 87.75,
+        "qtyRs": 3202,
+        "qtyLtrs": 36.49,
+        "fullTank": true
+      },
+
+      {
+        "id": 49,
+        "date": "01/03/2023",
+        "odo": 32338,
+        "fuelPrice": 87.89,
+        "qtyRs": 3400.46,
+        "qtyLtrs": 38.69,
+        "fullTank": true
+      },
+
+      {
+        "id": 50,
+        "date": "01/03/2023",
+        "odo": 33054,
+        "fuelPrice": 88.34,
+        "qtyRs": 3500.03,
+        "qtyLtrs": 39.62,
+        "fullTank": true
+      }
+    ],
+    "serviceData": []
   }
 }

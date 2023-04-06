@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 
 function Modal(props) {
-  const [visiblity, setVisiblity] = useState(false);
+  const [visibility, setVisibility] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const { title, content, footer, closeModal, store } = props;
@@ -10,7 +10,7 @@ function Modal(props) {
   const { TXT } = store;
 
   const enableModal = () => {
-    setVisiblity(true);
+    setVisibility(true);
     setTimeout(() => {
       setShowModal(true);
     }, 1);
@@ -19,7 +19,7 @@ function Modal(props) {
   const disableModal = () => {
     setShowModal(false);
     setTimeout(() => {
-      setVisiblity(false);
+      setVisibility(false);
     }, 150);
   };
 
@@ -51,7 +51,7 @@ function Modal(props) {
 
   return (
     <>
-      {visiblity && modalContent()}
+      {visibility && modalContent()}
       <button onClick={enableModal} className='btn btn-info me-2'>
         {TXT.cta.addNewVehicle}
       </button>

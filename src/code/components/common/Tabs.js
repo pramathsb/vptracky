@@ -1,16 +1,15 @@
-import React from "react";
-import { NavLink, Routes, Route, useParams } from "react-router-dom";
+import React from 'react';
+import { NavLink, Routes, Route } from 'react-router-dom';
 
 function Tabs(props) {
   let generatedTabs = [],
     generatedComponents = [];
 
-  const tabs = props.tabs.dynamic,
-    { view } = useParams();
+  const tabs = props.tabs.dynamic;
   const renderTabs = (tab, strIndex) => {
     return (
-      <li className="nav-item" key={strIndex}>
-        <NavLink to={tab.route} className="nav-link">
+      <li className='nav-item' key={strIndex}>
+        <NavLink to={tab.route} className='nav-link'>
           {tab.tabName}
         </NavLink>
       </li>
@@ -23,7 +22,7 @@ function Tabs(props) {
         key={strIndex}
         path={tab.route}
         element={
-          <div className="tab-pane fade show active" role="tabpanel">
+          <div className='tab-pane fade show active' role='tabpanel'>
             {tab.component}
           </div>
         }
@@ -43,8 +42,8 @@ function Tabs(props) {
 
   return (
     <>
-      <ul className="nav nav-tabs">{generatedTabs}</ul>
-      <div className="tab-content">
+      <ul className='nav nav-tabs'>{generatedTabs}</ul>
+      <div className='tab-content mt-4'>
         <Routes>{generatedComponents}</Routes>
       </div>
     </>

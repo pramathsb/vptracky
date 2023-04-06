@@ -35,10 +35,10 @@
     "dateOfPurchase": "Date of purchase",
     "age": "Age",
     "ratedMileage": "Rated Mileage",
-    "insauranceRenewalDate": "Insaurance Renewal Date",
+    "insuranceRenewalDate": "insurance Renewal Date",
     "nextServiceDate": "Next Service Date",
     "nextServiceKm": "Next Service KM",
-    "distanceTravelled": "Distance Travelled",
+    "distanceTraveled": "Distance Traveled",
     "totalFuelConsumedLtrs": "total fuel consumed ltrs",
     "totalFuelConsumedCost": "total fuel consumed cost",
     "totalAverageMileage": "total average mileage",
@@ -52,7 +52,7 @@
       "price": "Price Of Fuel",
       "quantity": "Quantity",
       "totalPrice": "Total price",
-      "fulltank": "Full Tank",
+      "fullTank": "Full Tank",
       "distance": "Last fill distance",
       "mileage": "Mileage"
     }

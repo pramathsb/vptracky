@@ -11,6 +11,46 @@ function VehicleInfo(props) {
   const { dashBoardData, fuelData } = vehicle;
   const { TXT } = store;
 
+  const dashboard = {
+    totalFuel: 0,
+    odo: 0,
+    totalFuelPrice: 0,
+    minFullTankDistance: 1000,
+    maxFullTankDistance: 0,
+    avgFullTankDistance: [],
+  };
+
+  const modifiedfuelData =
+    fuelData &&
+    fuelData.map((data, i) => {
+      // Distance
+      const curOdo = fuelData[i].odo;
+      const prevOdo = () => fuelData[i - 1].odo;
+      const trip = i > 0 ? curOdo - prevOdo() : 'NA';
+
+      // Mileage
+      const prevFulltank = () => fuelData[i - 1].fullTank;
+      const curFulltank = () => fuelData[i].fullTank;
+      const prevFuelFillQty = () => fuelData[i - 1].qtyLtrs;
+      const mileage = i > 0 && prevFulltank() ? (trip / prevFuelFillQty()).toFixed(2) : 'NA';
+
+      // Odo
+      dashboard.odo = curOdo;
+      dashboard.totalFuel += data.qtyLtrs;
+      dashboard.totalFuelPrice += data.qtyRs;
+      dashboard.minFullTankDistance =
+        i > 0 && prevFulltank() && curFulltank() && trip < dashboard.minFullTankDistance
+          ? trip
+          : dashboard.minFullTankDistance;
+      dashboard.maxFullTankDistance =
+        i > 0 && prevFulltank() && curFulltank() && trip > dashboard.maxFullTankDistance
+          ? trip
+          : dashboard.maxFullTankDistance;
+      i > 0 && prevFulltank() && curFulltank() && dashboard.avgFullTankDistance.push(trip);
+
+      return { ...data, trip, mileage };
+    });
+
   const renderDashboard = () => {
     return (
       <div className='row flex-wrap g-0 dashboard p-4 mb-4'>
@@ -48,31 +88,35 @@ function VehicleInfo(props) {
           {TXT.dashboard.nextServiceKm}: {dashBoardData.nextServiceKm}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.distanceTraveled}: {dashBoardData.distanceTraveled}
+          {TXT.dashboard.distanceTraveled}: {dashboard.odo}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.totalFuelConsumedLtrs}: {dashBoardData.totalFuelConsumedLtrs}
+          {TXT.dashboard.totalFuelConsumedLtrs}: {dashboard.totalFuel.toFixed(2)}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.totalFuelConsumedCost}: {dashBoardData.totalFuelConsumedCost}
+          {TXT.dashboard.totalFuelConsumedCost}: {dashboard.totalFuelPrice.toFixed(2)}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.totalAverageMileage}: {dashBoardData.totalAverageMileage}
+          {TXT.dashboard.totalAverageMileage}: {(dashboard.odo / dashboard.totalFuel).toFixed(2)}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.costPerKm}: {dashBoardData.costPerKm}
+          {TXT.dashboard.costPerKm}: {(dashboard.totalFuelPrice / dashboard.odo).toFixed(2)}
         </div>
         <div className='col-4 p-2'>
           {TXT.dashboard.model}: {dashBoardData.model}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.minDistOnFullTank}: {dashBoardData.minDistOnFullTank}
+          {TXT.dashboard.minDistOnFullTank}: {dashboard.minFullTankDistance}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.maxDistOnFullTank}: {dashBoardData.maxDistOnFullTank}
+          {TXT.dashboard.maxDistOnFullTank}: {dashboard.maxFullTankDistance}
         </div>
         <div className='col-4 p-2'>
-          {TXT.dashboard.avgDistOnFullTank}: {dashBoardData.avgDistOnFullTank}
+          {TXT.dashboard.avgDistOnFullTank}:{' '}
+          {(
+            dashboard.avgFullTankDistance.reduce((prev, curr) => prev + curr) /
+            dashboard.avgFullTankDistance.length
+          ).toFixed(2)}
         </div>
       </div>
     );
@@ -88,7 +132,7 @@ function VehicleInfo(props) {
       {
         route: 'fuel',
         tabName: 'Fuel',
-        component: fuelData && <FuelTable fuelData={fuelData} TXT={TXT} />,
+        component: fuelData && <FuelTable modifiedfuelData={modifiedfuelData} TXT={TXT} />,
       },
       {
         route: 'service',

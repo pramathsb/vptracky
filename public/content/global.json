@@ -54,7 +54,8 @@
       "totalPrice": "Total price",
       "fullTank": "Full Tank",
       "distance": "Last fill distance",
-      "mileage": "Mileage"
+      "mileage": "Mileage",
+      "trip": "Trip"
     }
   }
 }

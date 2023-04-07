@@ -375,15 +375,6 @@
         "fullTank": true
       },
       {
-        "id": 39,
-        "date": "03/10/2022",
-        "odo": 26017,
-        "fuelPrice": 0,
-        "qtyRs": 0,
-        "qtyLtrs": 0,
-        "fullTank": true
-      },
-      {
         "id": 40,
         "date": "08/10/2022",
         "odo": 26766,
@@ -417,7 +408,7 @@
         "fuelPrice": 88.31,
         "qtyRs": 2000.22,
         "qtyLtrs": 22.65,
-        "fullTank": true
+        "fullTank": false
       },
 
       {
